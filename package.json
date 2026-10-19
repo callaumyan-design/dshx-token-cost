@@ -1,0 +1,57 @@
+{
+  "name": "dshx-token-cost",
+  "version": "2.1.0",
+  "description": "A DSH settings page showing the DeepSeek account balance alongside daily token usage broken down by model, with the metered API cost it would have incurred.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis"
+  ],
+  "author": "callaumyan-design",
+  "license": "MIT",
+  "homepage": "https://github.com/callaumyan-design/dshx-token-cost#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callaumyan-design/dshx-token-cost.git"
+  },
+  "bugs": {
+    "url": "https://github.com/callaumyan-design/dshx-token-cost/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./usage": "./usage.js",
+    "./pricing": "./pricing.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "client.js",
+    "cordis.patch.yml",
+    "index.js",
+    "pricing.js",
+    "rate.js",
+    "usage.js"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "marketplace": {
+      "profiles": [
+        "web",
+        "desktop"
+      ],
+      "requiresBuildApproval": false,
+      "requiresRestart": true,
+      "manualSteps": false
+    }
+  }
+}
